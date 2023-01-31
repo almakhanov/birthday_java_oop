@@ -1,59 +1,50 @@
+import java.util.Locale;
+
 public class Month {
 
-    private int monthIndex;
+    private MonthName monthName;
 
     public Month(int month) {
-        this.monthIndex = month;
+        this.monthName = MonthName.values()[month];
     }
-
-    private String[] monthArray = {"January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"};
+    // MonthName.values()
+    // [MonthName.JANUARY, MonthName.FEBRUARY, ... .....]
 
     public String getMonthName() {
-        String monthName = "January";
-        switch (monthIndex) {
-            case 1:
-                monthName = "January";
+        return monthName.name();
+    }
+
+    public String getMonthNameCorrect() {
+        String month = "";
+        switch (monthName) {
+            case JANUARY:
+                month = "January";
                 break;
-            case 2:
-                monthName = "February";
+            case FEBRUARY:
+                month = "February";
                 break;
-            case 3:
-                monthName = "March";
+            case MARCH:
                 break;
-            case 4:
-                monthName = "April";
+            case APRIL:
                 break;
-            case 5:
-                monthName = "May";
+            case MAY:
                 break;
-            case 6:
-                monthName = "June";
+            case JUNE:
                 break;
-            case 7:
-                monthName = "July";
+            case JULY:
                 break;
-            case 8:
-                monthName = "August";
+            case AUGUST:
                 break;
-            case 9:
-                monthName = "September";
+            case SEPTEMBER:
                 break;
-            case 10:
-                monthName = "October";
+            case OCTOBER:
                 break;
-            case 11:
-                monthName = "November";
+            case NOVEMBER:
                 break;
-            case 12:
-                monthName = "December";
+            case DECEMBER:
                 break;
         }
-        return monthName;
+        return month;
     }
 
-
-    public String getMonthNameOptimized() {
-        return monthArray[monthIndex - 1];
-    }
 }

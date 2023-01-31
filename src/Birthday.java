@@ -33,11 +33,13 @@ public class Birthday {
         this.year = year;
     }
 
-
+    private String getMonthName() {
+        Month monthObject = new Month(month);
+        return monthObject.getMonthName();
+    }
 
     private String getBornDateText() {
-        Month monthObject = new Month(month);
-        return "You was born in " + getDayText() + " of " + monthObject.getMonthNameOptimized() + " in " + year;
+        return "You was born in " + getDayText() + " of " + getMonthName() + " in " + year;
     }
 
     private String getSeasonText() {
